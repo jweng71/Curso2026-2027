@@ -6,9 +6,12 @@ Hands-on 1: dataset selection and application specification.
 
 | Name | GitHub username |
 | --- | --- |
-| JunQi Weng | [jweng](https://github.com/jweng) |
+| JUNQI WENG | [jweng71](https://github.com/jweng71) |
+| XIAN CHEN | [xian0223](https://github.com/xian0223) |
+| LEONARDO LIN | [LeonardoLin05](https://github.com/LeonardoLin05) |
+| ALEJANDRO DE LORENZO ESCRIBANO | [Pescabichillo](https://github.com/Pescabichillo) |
 
-Remaining members: pending. Group number: Group02, selected as the next available number on 29 September 2026; not yet reserved by an online submission. Group leader: pending agreement.
+Group number: Group02, selected as the next available number on 29 September 2026; not yet reserved by an online submission. Group leader: pending agreement.
 Number check: the upstream HandsOn directory had no merged group directories; open [PR #27](https://github.com/FacultadInformatica-LinkedData/Curso2026-2027/pull/27) already contains Group01. No other open PR contained a HandsOn group directory at the time of checking. Accordingly, use Group02 and recheck before submission for concurrent claims.
 
 ## Proposal
@@ -33,4 +36,4 @@ Source: Ayuntamiento de Madrid, [Bibliotecas de Madrid](https://datos.madrid.es/
 ## Submission status
 
 Deadline provided for this assignment: **1 October 2026, 23:59, Europe/Madrid**.
-Pending: remaining members, group review of the application and self-assessment, recheck of group-number availability, and GitHub submission. School submission has not been made. These materials are maintained on the master branch of the personal fork jweng71/Curso2026-2027.
+Pending: group review of the application and self-assessment, recheck of group-number availability, and GitHub submission. School submission has not been made. These materials are maintained on the master branch of the personal fork jweng71/Curso2026-2027.

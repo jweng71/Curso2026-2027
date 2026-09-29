@@ -4,7 +4,7 @@
 
 **The “README.md” file:**
 
-- [ ] Includes the names and GitHub users of all the members of the group.
+- [x] Includes the names and GitHub users of all the members of the group.
 
 **The "csv" directory:**
 
@@ -23,7 +23,7 @@
 
 ## Comments on the self-assessment
 
-This is a draft following the repository's HandsOn/Templates/selfAssessmentHandsOn1.md checklist. JunQi Weng (jweng) is included; the other members are pending. Group02 follows the Group01 materials already present in open PR #27 (checked 29 September 2026); recheck before submission. R1 is supported by the course domain diagram in 07.MGLD.pdf, PDF page 46 (slide 47): Smart community facilities, Smart education and Smart tourism. Libraries and museums map to those domains. This is a reasoned match to the course material, not a claim of separate instructor approval.
+This is a draft following the repository's HandsOn/Templates/selfAssessmentHandsOn1.md checklist. All four members are included: JUNQI WENG (jweng71), XIAN CHEN (xian0223), LEONARDO LIN (LeonardoLin05), and ALEJANDRO DE LORENZO ESCRIBANO (Pescabichillo). The roster was confirmed by the user on 30 September 2026. Group02 follows the Group01 materials already present in open PR #27 (checked 29 September 2026); recheck before submission. R1 is supported by the course domain diagram in 07.MGLD.pdf, PDF page 46 (slide 47): Smart community facilities, Smart education and Smart tourism. Libraries and museums map to those domains. This is a reasoned match to the course material, not a claim of separate instructor approval.
 
 Two original CSV files have been downloaded and parsed (52 libraries; 68 museums). Both licenses were checked on the official dataset pages. Concrete linking candidates include Madrid (Wikidata Q2807) and Museo del Prado (Q160112); actual identity assertions are deferred until reconciliation. Two datasets share one publisher, so optional R6 is only partially satisfied. Official field documentation supports R5, with an age/schema caveat.
 
