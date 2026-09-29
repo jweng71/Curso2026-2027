@@ -134,7 +134,7 @@
 			<p>Hands-on 1 · Group02 · 29 September 2026</p>
 			<h1>Application requirements</h1>
 			<p><strong>Madrid Culture Finder</strong> helps residents, students and visitors discover nearby libraries and museums, compare access information and consult authoritative facility pages. It will use both selected CSV datasets, later converted to RDF and linked to reviewed external entities.</p>
-			<p><a href="datasetRequirements.html">Dataset evidence and quality assessment</a></p>
+			<p><a href="datasetRequirements.html">Dataset requirements</a></p>
 			<h2>1. Users and scope</h2>
 			<p>A student wants a library in a selected district. A visitor wants museums within a chosen radius. A resident wants facilities with a specific accessibility feature. The first version supports discovery and factual details; bookings, live occupancy, walking routes, real-time opening status and automatic accessibility certification are outside the planned scope.</p>
 			<h2>2. Functional requirements and acceptance criteria</h2>
@@ -184,75 +184,12 @@
 					</tr>
 					<tr>
 						<td>FR08</td>
-						<td><strong>Reproducible RDF export</strong><br>Later assignments will transform both snapshots to RDF, preserve provenance and publish a downloadable Turtle file.</td>
-						<td>The published file can be parsed as RDF and identifies original publisher, source URLs, snapshot date and license.</td>
-					</tr>
-					<tr>
-						<td>FR09</td>
 						<td><strong>Empty and error states</strong><br>Show No matching facilities when filters yield no result, and Data unavailable on load failure.</td>
 						<td>The user can clear filters or retry without confusing a load error with an empty dataset.</td>
 					</tr>
 				</tbody>
 			</table>
-			<h2>3. Non-functional requirements</h2>
-			<ul>
-				<li>
-					<strong>NFR01 · Accessibility:</strong>
-					keyboard-operable controls, visible focus, labeled inputs, text alternatives for map results and sufficient contrast; target WCAG 2.2 AA for the implemented interface.
-				</li>
-				<li>
-					<strong>NFR02 · Performance:</strong>
-					target search and filtering under one second after loading the current 120-record snapshot on a typical laptop; record the test environment during implementation.
-				</li>
-				<li>
-					<strong>NFR03 · Privacy:</strong>
-					offer manual location input; request optional geolocation only after an explicit user action and process it in the browser without storing it.
-				</li>
-				<li>
-					<strong>NFR04 · Reliability:</strong>
-					keep the local snapshot usable if external enrichment is unavailable; show missing data and the retrieval date visibly.
-				</li>
-				<li>
-					<strong>NFR05 · Reproducibility:</strong>
-					preserve raw downloads, identifiers and a provenance manifest; document cleaning and RDF mapping in later assignments.
-				</li>
-				<li>
-					<strong>NFR06 · Usability:</strong>
-					responsive list and detail layouts at 360 px and desktop widths; Spanish labels in the proposed application and English project documentation.
-				</li>
-			</ul>
-			<h2>4. Data-to-feature mapping</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Feature</th>
-						<th>CSV fields / derived information</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Search and categories</td>
-						<td>NOMBRE; dataset membership identifies Library or Museum; TIPO retained for source classification.</td>
-					</tr>
-					<tr>
-						<td>Area filters</td>
-						<td>COD-DISTRITO, DISTRITO, COD-BARRIO, BARRIO; unknown and invalid labels remain unknown.</td>
-					</tr>
-					<tr>
-						<td>Location and distance</td>
-						<td>LATITUD and LONGITUD; straight-line distance calculated from the user-selected origin.</td>
-					</tr>
-					<tr>
-						<td>Detail and accessibility</td>
-						<td>Address components, HORARIO, TRANSPORTE, ACCESIBILIDAD, TELEFONO, EMAIL and CONTENT-URL.</td>
-					</tr>
-					<tr>
-						<td>External context</td>
-						<td>Future reviewed RDF relations; enrichment must carry its own source and license evidence.</td>
-					</tr>
-				</tbody>
-			</table>
-			<h2>5. Expected interfaces</h2>
+			<h2>3. Expected interfaces</h2>
 			<p>The following are static design mock-ups, not a working application. Values illustrate presentation; counts, distances and marker locations are illustrative. Controls show intended behavior and are deliberately non-interactive.</p>
 			<div class="screens">
 				<section class="screen" aria-label="Search and map mock-up">
@@ -273,7 +210,7 @@
 								<h3>Resultados · ejemplo</h3>
 								<article class="card">
 									<strong>Museo del Prado</strong>
-									<p>Museo · ubicación de distrito pendiente de validar</p>
+									<p>Museo · distrito no disponible en el conjunto de datos</p>
 									<p>Información de accesibilidad: consultar detalle</p>
 									<span class="chip">Ver detalle →</span>
 								</article>
@@ -303,29 +240,25 @@
 						<div class="layout">
 							<div>
 								<h4>Planifica tu visita</h4>
-								<p><strong>Dirección:</strong> [dirección del registro seleccionado]</p>
-								<p><strong>Horario:</strong> [texto original; no se calcula “abierto ahora”]</p>
-								<p><strong>Transporte:</strong> [texto original del registro]</p>
-								<p><strong>Accesibilidad:</strong> [etiquetas de cada código documentado]</p>
+								<p><strong>Dirección:</strong> No disponible en el conjunto de datos</p>
+								<p><strong>Horario:</strong> De lunes a sábado, de 10 a 20 horas. Domingos y festivos, de 10 a 19 horas. Cerrado los días 1 de enero, 1 de mayo y 25 de diciembre. Horario reducido, de 10 a 14 horas (6 de enero y 24 y 31 de diciembre).  Horario de gratuidad:  De lunes a sábado, de 18 a 20 horas. Domingos y festivos, de 17 a 19 horas.  Acceso al Museo hasta 30 minutos antes del cierre.</p>
+								<p><strong>Transporte:</strong> Metro: Estación del Arte (línea 1), Banco de España (línea 2).  Cercanías Renfe:  Atocha (líneas C1, C2, C3, C4, C5, C7 y C10).</p>
+								<p><strong>Accesibilidad:</strong> Accesible · Lengua de signos · Bucle de inducción magnético</p>
 								<span class="chip">Consultar ficha oficial ↗</span>
 							</div>
 							<div class="card">
 								<h4>Contexto enlazado</h4>
-								<p>Ciudad: Madrid → entidad revisada</p>
-								<p>Institución: Museo del Prado → candidato Q160112</p>
-								<p>Estado: pendiente de revisión antes de enlazar</p>
+								<p>Ciudad: Madrid → Wikidata Q2807</p>
+								<p>Institución: Museo del Prado → Wikidata Q160112</p>
+								<p>Enlaces externos en la interfaz propuesta</p>
 								<p class="muted">Origen: Ayuntamiento de Madrid<br>Datos consultados: 29/09/2026<br>Licencia: CC BY 4.0</p>
 							</div>
 						</div>
 					</div>
 				</section>
 			</div>
-			<h2>6. Interaction flow and later implementation</h2>
+			<h2>4. Interaction flow</h2>
 			<p>Search → apply filters → inspect list/map → select a facility → inspect source details and verified links → return with filters retained. Map and list share the selected record. At narrow widths the map follows the list; all results remain accessible without using a map.</p>
-			<p>Planned graph: typed Library and Museum resources, address literals, coordinates, area relations and publisher provenance. Use stable local identifiers based on PK; finalize a controlled URI base and ontology choices in the next assignment. Do not substitute the portal's existing RDF export for the group's own CSV-to-RDF transformation. The initial application can use a published RDF snapshot; a SPARQL endpoint is optional.</p>
-			<footer>
-				Madrid Culture Finder · Group02: JUNQI WENG (jweng71), XIAN CHEN (xian0223), LEONARDO LIN (LeonardoLin05), ALEJANDRO DE LORENZO ESCRIBANO (Pescabichillo) · Group roster complete; Group02 was the next available number at the time of checking. Final group review and school submission pending.
-			</footer>
 		</main>
 	</body>
 </html>
